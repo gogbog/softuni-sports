@@ -24,10 +24,12 @@ html {
     //COMPONENT STYLES
     @import 'helpers';
     @import 'top_navs';
+    @import 'slider';
     @import 'sidebar';
     @import 'main';
     @import 'footer';
     @import 'bottom_nav';
+    @import 'responsive';
 
   }
 
@@ -40,10 +42,12 @@ html {
     //COMPONENT STYLES
     @import 'helpers';
     @import 'top_navs';
+    @import 'slider';
     @import 'sidebar';
     @import 'main';
     @import 'footer';
     @import 'bottom_nav';
+    @import 'responsive';
   }
 
 }

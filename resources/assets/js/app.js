@@ -2,6 +2,8 @@ window.Popper = require('popper.js');
 require('bootstrap/dist/js/bootstrap.js');
 global.$ = global.jQuery = require('jquery');
 global.Slideout = require('slideout/dist/slideout.min.js');
+global.SimpleBar = require('simplebar/dist/simplebar.min.js');
+global.owlCarousel = require('owl.carousel/dist/owl.carousel.min.js');
 
 // -----------------------------------------
 //             THEME CHANGE
@@ -41,15 +43,7 @@ let trans = () => {
 //             SLIDEOUT MENU
 // -----------------------------------------
 
-// let slideout = new Slideout({
-//     'panel': document.getElementById('mobile-menu'),
-//     'menu': document.getElementById('content-wrapper'),
-//     'padding': 256,
-//     'tolerance': 70
-// });
-
-
-var slideout = new Slideout({
+let slideout = new Slideout({
     'panel': document.getElementById('panel'),
     'menu': document.getElementById('menu'),
     'padding': 256,
@@ -72,6 +66,34 @@ slideout.on('close', function () {
 // document.querySelector('.toggle-button').addEventListener('click', function() {
 //     slideout.toggle();
 // });
+
+// -----------------------------------------
+//             CARD SLIDER
+// -----------------------------------------
+
+$(document).ready(function () {
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        nav: false,
+        responsive: {
+            0: {
+                items: 1
+            },
+            800: {
+                items: 2
+            },
+            1100: {
+                items: 3
+            },
+            1400: {
+                items: 5
+            }
+        }
+    });
+});
 
 // -----------------------------------------
 //             HIDE NAV ON SCROLL

@@ -24,6 +24,8 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "owl.carousel": "^2.3.4",
+        "simplebar": "^4.0.0",
         "slideout": "^1.0.1"
     }
 }

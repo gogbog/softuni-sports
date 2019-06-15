@@ -47,3 +47,12 @@ body {
 .slideout-open .slideout-menu {
   display: block;
 }
+
+.view-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}

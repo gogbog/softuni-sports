@@ -12,6 +12,9 @@ html {
     transition-delay: 0s !important;
   }
 
+  $primary-accent-color: #1976d2;
+  $secondary-accent-color: #303f9f;
+
   &[data-theme='light'] {
     // VARIABLES
 

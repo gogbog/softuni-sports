@@ -1,0 +1,50 @@
+// MAIN TOP NAVBAR //
+.main-top-navbar {
+  position: fixed;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 56px;
+  background-color: $primary-accent-color;
+}
+
+.main-top-navbar > .container {
+  display: flex;
+  align-items: center;
+}
+// !MAIN TOP NAVBAR //
+
+// SIDEBAR TOGGLE BUTTON //
+.main-top-navbar-sidebar-toggle-btn {
+  display: none;
+  padding-left: 10px;
+  cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 25px;
+  height: 2px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.visible .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-5px, 6px);
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.visible .bar2 {opacity: 0;}
+
+.visible .bar3 {
+  -webkit-transform: rotate(45deg) translate(-5px, -6px);
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+// !SIDEBAR TOGGLE BUTTON //
+
+// NAVBAR LOGO //
+.main-top-navbar-logo {
+  float: left;
+}
+// !NAVBAR LOGO //

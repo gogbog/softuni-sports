@@ -10,7 +10,7 @@
     }
 
 @endphp
-<!doctype html>
+        <!doctype html>
 <html lang="{{ app()->getLocale() }}" data-theme="{{ $isDarkTheme ? 'dark' : 'light' }}">
 <head>
     <meta charset="UTF-8">
@@ -25,6 +25,35 @@
 <body>
 
 {{--ILIIKA TUKA SLAGASH NAVBARA--}}
+<nav class="main-top-navbar">
+
+    {{-- sidebar toggler button --}}
+    <div class="main-top-navbar-sidebar-toggle-btn" id="top-navbar-sidebar-toggler">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+
+    <div class="container">
+
+        {{-- website logo --}}
+        <div class="main-top-navbar-logo">
+            {{--<img src="#">--}}
+            <h3>SOFTUNI FEST 2019</h3>
+        </div>
+
+        {{-- search form --}}
+        <div class="main-top-navbar-search-form">
+
+        </div>
+
+        {{-- theme toggler --}}
+        <div class="main-top-navbar-theme-switcher">
+
+        </div>
+
+    </div>
+</nav>
 
 <nav id="menu">
     <header>
@@ -34,13 +63,13 @@
 </nav>
 
 <main id="panel">
-{{--    <div class="owl-carousel sport-card-slider">--}}
-{{--        <div class="item"><h4>1</h4></div>--}}
-{{--        <div class="item"><h4>2</h4></div>--}}
-{{--        <div class="item"><h4>3</h4></div>--}}
-{{--        <div class="item"><h4>4</h4></div>--}}
-{{--        <div class="item"><h4>5</h4></div>--}}
-{{--    </div>--}}
+    {{--    <div class="owl-carousel sport-card-slider">--}}
+    {{--        <div class="item"><h4>1</h4></div>--}}
+    {{--        <div class="item"><h4>2</h4></div>--}}
+    {{--        <div class="item"><h4>3</h4></div>--}}
+    {{--        <div class="item"><h4>4</h4></div>--}}
+    {{--        <div class="item"><h4>5</h4></div>--}}
+    {{--    </div>--}}
     <div class="view-wrapper width-view-max">
         @yield('content')
     </div>

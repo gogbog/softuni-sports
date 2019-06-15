@@ -1,0 +1,13 @@
+// if screen is <= px, then do this blyat
+@media only screen and (max-width: 1100px)  {
+
+  .main-top-navbar-logo {
+    display: none;
+  }
+
+  .main-top-navbar-sidebar-toggle-btn {
+    display: block;
+  }
+
+}
+

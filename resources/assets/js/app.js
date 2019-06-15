@@ -1,6 +1,7 @@
 window.Popper = require('popper.js');
 require('bootstrap/dist/js/bootstrap.js');
 global.$ = global.jQuery = require('jquery');
+global.Slideout = require('slideout/dist/slideout.min.js');
 
 // -----------------------------------------
 //             THEME CHANGE
@@ -36,8 +37,41 @@ let trans = () => {
     }, 500)
 };
 
+// -----------------------------------------
+//             SLIDEOUT MENU
+// -----------------------------------------
+
+// let slideout = new Slideout({
+//     'panel': document.getElementById('mobile-menu'),
+//     'menu': document.getElementById('content-wrapper'),
+//     'padding': 256,
+//     'tolerance': 70
+// });
 
 
+var slideout = new Slideout({
+    'panel': document.getElementById('panel'),
+    'menu': document.getElementById('menu'),
+    'padding': 256,
+    'tolerance': 70
+});
+
+slideout.on('translate', function () {
+    $('#menu').show();
+});
+
+slideout.on('beforeopen', function () {
+    $('#menu').show();
+});
+
+slideout.on('close', function () {
+    $('#menu').hide();
+});
+
+// // Toggle button
+// document.querySelector('.toggle-button').addEventListener('click', function() {
+//     slideout.toggle();
+// });
 
 // -----------------------------------------
 //             HIDE NAV ON SCROLL

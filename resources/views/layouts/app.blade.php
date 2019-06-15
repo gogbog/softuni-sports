@@ -26,15 +26,18 @@
 
 {{--ILIIKA TUKA SLAGASH NAVBARA--}}
 
-<div class="width-view-max">
+<nav id="menu">
+    <header>
+        <h2>Menu</h2>
+        <input type="checkbox" id="theme-switch" class="theme-switch-input"/>
+    </header>
+</nav>
 
-    <input type="checkbox" id="theme-switch" class="theme-switch-input"/>
-</div>
-
-
-<div class="content-wrapper">
-    @yield('content')
-</div>
+<main id="panel">
+    <div class="view-wrapper">
+        @yield('content')
+    </div>
+</main>
 
 {{--Bottom navigationa--}}
 {{--TUKA SLAGASH FOOTERA--}}

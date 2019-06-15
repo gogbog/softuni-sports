@@ -62,10 +62,15 @@ slideout.on('close', function () {
     $('#menu').hide();
 });
 
+slideout.on('beforeclose', function () {
+    $('.main-top-navbar-sidebar-toggle-btn').removeClass('visible');
+});
+
 // // Toggle button
-// document.querySelector('.toggle-button').addEventListener('click', function() {
-//     slideout.toggle();
-// });
+document.querySelector('.main-top-navbar-sidebar-toggle-btn').addEventListener('click', function() {
+    $(this).addClass('visible');
+    slideout.toggle();
+});
 
 // -----------------------------------------
 //             CARD SLIDER
@@ -73,37 +78,30 @@ slideout.on('close', function () {
 
 $(document).ready(function () {
     $('.owl-carousel').owlCarousel({
-        loop: true,
-        autoplay: true,
-        autoplayTimeout: 5000,
-        autoplayHoverPause: true,
-        nav: false,
-        responsive: {
-            0: {
-                items: 1
+        loop:true,
+        margin:10,
+        nav:true,
+        responsive:{
+            0:{
+                items:1
             },
-            800: {
-                items: 2
+            600:{
+                items:3
             },
-            1100: {
-                items: 3
-            },
-            1400: {
-                items: 5
+            1000:{
+                items:5
             }
         }
+    })
     });
 
     // sidebar toggler button animation toggle
     //
-
-    let sidebarToggleBtn = document.getElementById("top-navbar-sidebar-toggler");
-    sidebarToggleBtn.addEventListener( "click", function () {
-        sidebarToggleBtn.classList.toggle("visible");
-    });
-
-
-});
+    //
+    // let sidebarToggleBtn = document.getElementById("top-navbar-sidebar-toggler");
+    // sidebarToggleBtn.addEventListener( "click", function () {
+    //     sidebarToggleBtn.classList.toggle("visible");
+    //
 
 // -----------------------------------------
 //             HIDE NAV ON SCROLL

@@ -15,10 +15,13 @@ html {
   $primary-accent-color: #1976d2;
   $secondary-accent-color: #303f9f;
 
+  $small-material-shadow: 0px 2px 5px -3px rgba(0, 0, 0, 0.1);
+
   &[data-theme='light'] {
     // VARIABLES
 
-    $bg: #f1f1f1;
+    $bg: #f9f9f9;
+    $bg-card: #fff;
     $primary-font-color: #313131;
 
     //COMPONENT STYLES
@@ -37,6 +40,7 @@ html {
     // VARIABLES
 
     $bg: #333;
+    $bg-card: #444;
     $primary-font-color: #f1f1f1;
 
     //COMPONENT STYLES

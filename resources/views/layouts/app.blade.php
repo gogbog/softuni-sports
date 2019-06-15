@@ -10,7 +10,7 @@
     }
 
 @endphp
-        <!doctype html>
+<!doctype html>
 <html lang="{{ app()->getLocale() }}" data-theme="{{ $isDarkTheme ? 'dark' : 'light' }}">
 <head>
     <meta charset="UTF-8">
@@ -34,7 +34,7 @@
         <div class="bar3"></div>
     </div>
 
-    <div class="container">
+    <div class="contained">
 
         {{-- website logo --}}
         <div class="main-top-navbar-logo">
@@ -49,28 +49,19 @@
 
         {{-- theme toggler --}}
         <div class="main-top-navbar-theme-switcher">
-
+            <input type="checkbox" id="theme-switch" class="theme-switch-input"/>
         </div>
 
     </div>
 </nav>
 
 <nav id="menu">
-    <header>
-        <h2>Menu</h2>
-        <input type="checkbox" id="theme-switch" class="theme-switch-input"/>
-    </header>
+
+
 </nav>
 
 <main id="panel">
-    {{--    <div class="owl-carousel sport-card-slider">--}}
-    {{--        <div class="item"><h4>1</h4></div>--}}
-    {{--        <div class="item"><h4>2</h4></div>--}}
-    {{--        <div class="item"><h4>3</h4></div>--}}
-    {{--        <div class="item"><h4>4</h4></div>--}}
-    {{--        <div class="item"><h4>5</h4></div>--}}
-    {{--    </div>--}}
-    <div class="view-wrapper width-view-max">
+    <div class="view-wrapper contained">
         @yield('content')
     </div>
 </main>

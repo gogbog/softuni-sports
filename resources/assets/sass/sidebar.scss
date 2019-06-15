@@ -1,7 +1,55 @@
-.side-bar-container{
+.side-bar-container {
   flex: 0 0 256px;
   overflow-x: hidden;
   overflow-y: auto;
   position: sticky;
   top: 70px;
+  background: $bg-card;
+  box-shadow: $small-material-shadow;
+  border-radius: 5px;
+
+  .sport-collapsible-link {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .collapsible-trigger {
+      text-align: left;
+      flex: 1;
+      background: transparent;
+      border: none;
+      padding: 10px 20px;
+
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+
+  .side-menu-leagues-container {
+    padding: 10px;
+
+    .league-view-all {
+      padding: 10px;
+      text-decoration: none;
+      color: $primary-font-color;
+    }
+
+    .leagues-list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      .league-item {
+        padding: 5px 10px;
+
+        .league-link {
+          text-decoration: none;
+          color: $primary-font-color;
+        }
+      }
+    }
+  }
+
 }

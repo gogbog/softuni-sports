@@ -1,1 +1,6 @@
-ei tuka
+@extends('layouts.app')
+@section('content')
+
+
+
+@endsection

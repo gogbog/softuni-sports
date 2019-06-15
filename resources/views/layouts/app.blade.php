@@ -1,5 +1,17 @@
+@php
+    $isDarkTheme = true;
+    if ( !empty($_COOKIE['dark']) && $_COOKIE['dark'] == 'true' ) {
+        $isDarkTheme = true;
+    } else if ( !empty($_COOKIE['dark']) && $_COOKIE['dark'] == 'false' ) {
+        $isDarkTheme = false;
+    } else if ( empty($_COOKIE['dark']) ) {
+        $isDarkTheme = false;
+        Cookie::make('dark', true);
+    }
+
+@endphp
 <!doctype html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ app()->getLocale() }}" data-theme="{{ $isDarkTheme ? 'dark' : 'light' }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -12,8 +24,20 @@
 </head>
 <body>
 
-@yield('content')
+{{--ILIIKA TUKA SLAGASH NAVBARA--}}
 
+<div class="width-view-max">
+
+    <input type="checkbox" id="theme-switch" class="theme-switch-input"/>
+</div>
+
+
+<div class="content-wrapper">
+    @yield('content')
+</div>
+
+{{--Bottom navigationa--}}
+{{--TUKA SLAGASH FOOTERA--}}
 
 <script src="{{ mix('/js/app.js') }}"></script>
 </body>

@@ -164,6 +164,8 @@
         </ul>
     </div>
 
+    <div class="main-bottom-footer-separator"></div>
+
 </footer>
 
 

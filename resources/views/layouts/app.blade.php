@@ -22,6 +22,7 @@
     {{--    <link rel="icon" href="{{ asset('img/dark-logo.png') }}">--}}
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -68,60 +69,64 @@
 <nav id="menu">
     <div class="side-bar-container">
 
-        <div class="sport-collapsible-link">
-            <button class="collapsible-trigger"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#sportLeagues"
-                    aria-expanded="false"
-                    aria-controls="sportLeagues">
-                Sport Name
-            </button>
-        </div>
+        <div class="side-bar-inner">
 
-        <div class="collapse" id="sportLeagues">
-            <div class="side-menu-leagues-container">
-                <a href="#" class="league-view-all">View all</a>
-                <ul class="leagues-list">
-                    <li class="league-item">
-                        <a href="#" class="league-link">Premier League</a>
-                    </li>
-                    <li class="league-item">
-                        <a href="#" class="league-link">Premier League</a>
-                    </li>
-                    <li class="league-item">
-                        <a href="#" class="league-link">Premier League</a>
-                    </li>
-                </ul>
+            <div class="sport-collapsible-link">
+                <button class="collapsible-trigger"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#sportLeagues"
+                        aria-expanded="false"
+                        aria-controls="sportLeagues">
+                    Sport Name <span class="badge">4</span>
+                </button>
             </div>
-        </div>
 
-        <div class="sport-collapsible-link">
-            <button class="collapsible-trigger"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#sportLeagues1"
-                    aria-expanded="false"
-                    aria-controls="sportLeagues1">
-                Sport Name
-            </button>
-        </div>
-
-        <div class="collapse" id="sportLeagues1">
-            <div class="side-menu-leagues-container">
-                <a href="#" class="league-view-all">View all</a>
-                <ul class="leagues-list">
-                    <li class="league-item">
-                        <a href="#" class="league-link">Premier League</a>
-                    </li>
-                    <li class="league-item">
-                        <a href="#" class="league-link">Premier League</a>
-                    </li>
-                    <li class="league-item">
-                        <a href="#" class="league-link">Premier League</a>
-                    </li>
-                </ul>
+            <div class="collapse" id="sportLeagues">
+                <div class="side-menu-leagues-container">
+                    <a href="#" class="league-view-all">View all</a>
+                    <ul class="leagues-list">
+                        <li class="league-item">
+                            <a href="#" class="league-link">Premier League</a>
+                        </li>
+                        <li class="league-item">
+                            <a href="#" class="league-link">Premier League</a>
+                        </li>
+                        <li class="league-item">
+                            <a href="#" class="league-link">Premier League</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
+
+            <div class="sport-collapsible-link">
+                <button class="collapsible-trigger"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#sportLeagues1"
+                        aria-expanded="false"
+                        aria-controls="sportLeagues1">
+                    Sport Name
+                </button>
+            </div>
+
+            <div class="collapse" id="sportLeagues1">
+                <div class="side-menu-leagues-container">
+                    <a href="#" class="league-view-all">View all</a>
+                    <ul class="leagues-list">
+                        <li class="league-item">
+                            <a href="#" class="league-link">Premier League</a>
+                        </li>
+                        <li class="league-item">
+                            <a href="#" class="league-link">Premier League</a>
+                        </li>
+                        <li class="league-item">
+                            <a href="#" class="league-link">Premier League</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
 
     </div>
@@ -151,6 +156,11 @@
                 </a>
             </div>
 
+        </div>
+    </div>
+    <div class="selected-sport-box contained"  style="background-image: url('{{ asset('images/e-sport.jpg') }}');">
+        <div class="sport-box-overlay">
+            <p>Football</p>
         </div>
     </div>
     <div class="view-wrapper contained">

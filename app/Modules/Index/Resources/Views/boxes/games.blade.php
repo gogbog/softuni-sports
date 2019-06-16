@@ -1,7 +1,9 @@
 <div class="main-container-box">
-    <p class="league-title">
-        My league
-    </p>
+    <div class="league-title">
+        <div class="league-title-overlay">
+            <p>My league</p>
+        </div>
+    </div>
 
     <div class="match-card">
         <a href="#" class="match-card-link">

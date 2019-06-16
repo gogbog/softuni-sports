@@ -7,12 +7,30 @@
     align-items: center;
     flex-direction: column;
     .league-title{
+      position: relative;
+      width: 100%;
       align-self: flex-start;
-      color: $primary-font-color;
-      font-size: 20px;
-      margin: 0;
-      font-weight: 900;
-      padding: 10px 0;
+      padding: 20px;
+      background: $primary-accent-color;
+      background: linear-gradient(90deg, $primary-accent-color 0%, rgba(0,0,0,0) 100%);
+      .league-title-overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgba(0,0,0,0);
+        p{
+          position: absolute;
+          top: 50%;
+          left: 20px;
+          transform: translateY(-50%);
+          color: white;
+          font-size: 20px;
+          margin: 0;
+          font-weight: 700;
+        }
+      }
     }
     .match-card{
       transition: box-shadow 0.2s ease-in-out;
@@ -45,6 +63,8 @@
           text-align: center;
           p{
             margin: 0;
+            font-size: 16px;
+            font-weight: 600;
           }
           &.home-team{
 
@@ -56,6 +76,8 @@
         .result{
           flex: 1;
           text-align: center;
+          font-size: 18px;
+          font-weight: 800;
         }
       }
     }

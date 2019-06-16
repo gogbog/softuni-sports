@@ -1,57 +1,74 @@
 .side-bar-container {
-  flex: 0 0 256px;
+  flex: 0 0 300px;
   overflow-x: hidden;
   overflow-y: auto;
   position: sticky;
-  top: 70px;
+  top: 56px;
   background: $bg-card;
   box-shadow: $small-material-shadow;
-  border-radius: 5px;
+  border-radius: 0;
 
-  .sport-collapsible-link {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+  .side-bar-inner{
 
-    .collapsible-trigger {
-      text-align: left;
-      flex: 1;
-      background: transparent;
-      border: none;
-      padding: 10px 20px;
-      color: $primary-font-color;
-      font-size: 18px;
-      font-weight: 700;
+    .sport-collapsible-link {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
 
-      &:focus {
-        outline: 0;
+      .collapsible-trigger {
+        position: relative;
+        text-align: left;
+        flex: 1;
+        background: transparent;
+        padding: 10px 20px;
+        color: $primary-font-color;
+        font-size: 16px;
+        font-weight: 700;
+        border-radius: 0;
+        border: none;
+
+        &:focus {
+          outline: 0;
+        }
+        & .badge{
+          position: absolute;
+          top: 50%;
+          right: 10px;
+          transform: translate(-50%, -50%);
+          background-color: $primary-accent-color;
+          color: white;
+        }
       }
     }
-  }
 
-  .side-menu-leagues-container {
-    padding: 10px;
+    .side-menu-leagues-container {
+      padding: 10px 20px;
+      border-top: 1px solid rgba(0,0,0,0.3);
+      border-bottom: 1px solid rgba(0,0,0,0.3);
 
-    .league-view-all {
-      text-decoration: none;
-      color: $primary-font-color;
-    }
-
-    .leagues-list {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-
-      .league-item {
+      .league-view-all {
+        text-decoration: none;
+        color: $primary-font-color;
         padding: 5px 10px;
+      }
 
-        .league-link {
-          text-decoration: none;
-          color: $primary-font-color;
+      .leagues-list {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        .league-item {
+          padding: 5px 10px;
+
+          .league-link {
+            text-decoration: none;
+            color: $primary-font-color;
+          }
         }
       }
     }
   }
+
 
 }

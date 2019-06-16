@@ -11,6 +11,11 @@
   background-color: #1984E4;
 }
 
+.main-bottom-footer-separator:last-child {
+  margin-bottom: 0 !important;
+  margin-top: 20px !important;
+}
+
 .main-bottom-footer-logo {
   justify-content: center;
   display: flex;
@@ -31,9 +36,4 @@
 .main-bottom-footer-credits ul li {
   flex: 1;
   text-align: center;
-}
-
-.main-bottom-footer-separator:last-child {
-  margin-bottom: 0 !important;
-  margin-top: 20px !important;
 }

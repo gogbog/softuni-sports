@@ -27,8 +27,8 @@ class Controller extends BaseController
         View::share('sports_cache', $sports);
 
 
-        $fixtures = Fixture::active()->orderBy('date', 'DESC')->with(['league', 'league.sport'])->limit(15)->get();
-        View::share('fixtures_cache', $fixtures);
+        $fixtures_cache = Fixture::active()->orderBy('date', 'DESC')->with(['league', 'league.sport'])->limit(15)->get();
+        View::share('fixtures_cache', $fixtures_cache);
 
     }
 }

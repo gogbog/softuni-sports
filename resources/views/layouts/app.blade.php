@@ -21,7 +21,8 @@
     <title>{{ config('app.name', 'SoftUniSports') }}</title>
     {{--    <link rel="icon" href="{{ asset('img/dark-logo.png') }}">--}}
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -46,7 +47,8 @@
     {{-- search form --}}
     <div class="main-top-navbar-search-form">
         <form class="search-form" action="" id="search_form">
-            <input class="search-form-input" id="search_form_input" type="search" placeholder="search for sport, league or match">
+            <input class="search-form-input" id="search_form_input" type="search"
+                   placeholder="search for sport, league or match">
             <i class="fa fa-search search-form-icon"></i>
         </form>
 
@@ -63,38 +65,40 @@
         <div aria-hidden="true" class="switch_marker"></div>
     </div>
 
-    <input class="search-form-input_mobile" id="search_form_input_mobile" type="search" placeholder="search for sport, league or match">
+    <input class="search-form-input_mobile" id="search_form_input_mobile" type="search"
+           placeholder="search for sport, league or match">
 </nav>
 
 <nav id="menu">
     <div class="side-bar-container">
 
         <div class="side-bar-inner">
-        @foreach($sports_cache as $sport_cache)
-            <div class="sport-collapsible-link">
-                <button class="collapsible-trigger"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="#mobile_nav_{{ $sport_cache->id }}"
-                        aria-expanded="false"
-                        aria-controls="mobile_nav_{{$sport_cache->id}}">
-                    {{$sport_cache->title}} <span class="badge">4</span>
-                </button>
-            </div>
-
-            <div class="collapse" id="mobile_nav_{{$sport_cache->id}}">
-                <div class="side-menu-leagues-container">
-                    <a href="{{ route('sports.index', $sport_cache->slug) }}" class="league-view-all">View all</a>
-                    <ul class="leagues-list">
-                        @foreach($sport_cache->leagues as $sport_cache_league)
-                            <li class="league-item">
-                                <a href="{{ route('leagues.index', $sport_cache_league->slug) }}" class="league-link">{{ $sport_cache_league->title }}</a>
-                            </li>
-                        @endforeach
-                    </ul>
+            @foreach($sports_cache as $sport_cache)
+                <div class="sport-collapsible-link">
+                    <button class="collapsible-trigger"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#mobile_nav_{{ $sport_cache->id }}"
+                            aria-expanded="false"
+                            aria-controls="mobile_nav_{{$sport_cache->id}}">
+                        {{$sport_cache->title}} <span class="badge">4</span>
+                    </button>
                 </div>
-            </div>
-        @endforeach
+
+                <div class="collapse" id="mobile_nav_{{$sport_cache->id}}">
+                    <div class="side-menu-leagues-container">
+                        <a href="{{ route('sports.index', $sport_cache->slug) }}" class="league-view-all">View all</a>
+                        <ul class="leagues-list">
+                            @foreach($sport_cache->leagues as $sport_cache_league)
+                                <li class="league-item">
+                                    <a href="{{ route('leagues.index', $sport_cache_league->slug) }}"
+                                       class="league-link">{{ $sport_cache_league->title }}</a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+            @endforeach
         </div>
 
     </div>
@@ -104,25 +108,26 @@
 <main id="panel">
     <div class="other-sports-games" data-slideout-ignore>
         <div class="owl-carousel other-sports-games-carousel">
-
-            <div class="card">
-                <a href="" class="recent-link">
-                    <img src="https://via.placeholder.com/150" class="card-img" alt="...">
-                    <div class="card-img-overlay">
-                        <div class="game-info">
-                            <div class="card-team card-home-team">
-                                Chelsea
-                            </div>
-                            <div class="card-result">
-                                1 : 0
-                            </div>
-                            <div class="card-team card-home-team">
-                                Manchester city
+            @foreach($fixtures_cache as $fixture_cache)
+                <div class="card">
+                    <a href="{{ route('fixtures.index', $fixture_cache->slug) }}" class="recent-link">
+                        <img src="https://via.placeholder.com/150" class="card-img" alt="...">
+                        <div class="card-img-overlay">
+                            <div class="game-info">
+                                <div class="card-team card-home-team">
+                                    {{ $fixture_cache->homeTeam }}
+                                </div>
+                                <div class="card-result">
+                                    {{$fixture_cache->homeTeamScore}} : {{$fixture_cache->awayTeamScore}}
+                                </div>
+                                <div class="card-team card-home-team">
+                                    {{ $fixture_cache->enemyTeam }}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
-            </div>
+                    </a>
+                </div>
+                @endforeach
 
         </div>
     </div>

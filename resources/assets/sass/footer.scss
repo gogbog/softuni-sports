@@ -1,6 +1,6 @@
 .main-bottom-footer {
   width: 100%;
-  background-color: #1976d2;
+  background-color: $primary-accent-color;
   color: #ffffff !important;
 }
 
@@ -8,7 +8,7 @@
   width: 100%;
   height: 25px;
   margin-bottom: 20px;
-  background-color: #1984E4;
+  background-color: $secondary-accent-color;
 }
 
 .main-bottom-footer-separator:last-child {

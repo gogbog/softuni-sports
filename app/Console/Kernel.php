@@ -26,7 +26,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('sync:json')
-            ->cron("*/2 * * * *")->name('update_fixtures')->withoutOverlapping()
+            ->cron("*/10 * * * *")->name('update_fixtures')->withoutOverlapping()
             ->appendOutputTo(storage_path('logs/update_fixtures.log'));
 
     }

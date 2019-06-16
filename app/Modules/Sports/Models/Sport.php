@@ -51,6 +51,12 @@ class Sport extends Model implements HasMedia
             ->sharpen(10)
             ->nonOptimized();
 
+        $this->addMediaConversion('summary')
+            ->width(900)
+            ->height(200)
+            ->sharpen(10)
+            ->nonOptimized();
+
         $this->addMediaConversion('small')
             ->width(250)
             ->height(250)

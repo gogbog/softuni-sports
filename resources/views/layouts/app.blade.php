@@ -10,7 +10,7 @@
     }
 
 @endphp
-        <!doctype html>
+<!doctype html>
 <html lang="{{ app()->getLocale() }}" data-theme="{{ $isDarkTheme ? 'dark' : 'light' }}">
 <head>
     <meta charset="UTF-8">
@@ -40,7 +40,7 @@
     {{-- website logo --}}
     <div class="main-top-navbar-logo">
         <a href="{{ route('index.index') }}">
-        <img src="{{ asset("images/softuni_logo.png") }}">
+            <img src="{{ asset("images/softuni_logo.png") }}">
         </a>
     </div>
 
@@ -48,16 +48,19 @@
 
     {{-- search form --}}
     <div class="main-top-navbar-search-form">
-        <form class="search-form" action="" id="search_form">
-            <input class="search-form-input" id="search_form_input" type="search"
-                   placeholder="search for sport, league or match">
+        <form class="search-form"
+              action="{{ route('index.search') }}"
+              method="get"
+              id="search_form">
+            <input class="search-form-input"
+                   id="search_form_input"
+                   type="search"
+                   name="word"
+                   placeholder="Search ...">
+
             <i class="fa fa-search search-form-icon"></i>
         </form>
 
-        <form action="" class="search-form-mobile" id="search_form_mobile">
-
-            <i class="fa fa-search search-form-icon"></i>
-        </form>
     </div>
 
     {{-- theme switcher --}}
@@ -67,8 +70,6 @@
         <div aria-hidden="true" class="switch_marker"></div>
     </div>
 
-    <input class="search-form-input_mobile" id="search_form_input_mobile" type="search"
-           placeholder="search for sport, league or match">
 </nav>
 
 <nav id="menu">
@@ -94,7 +95,8 @@
                             @foreach($sport_cache->leagues as $sport_cache_league)
                                 <li class="league-item">
                                     <a href="{{ route('leagues.index', $sport_cache_league->slug) }}"
-                                       class="league-link">{{ $sport_cache_league->title }} <span class="badge">{{ $sport_cache_league->fixtures_count }}</span></a>
+                                       class="league-link">{{ $sport_cache_league->title }} <span
+                                                class="badge">{{ $sport_cache_league->fixtures_count }}</span></a>
                                 </li>
                             @endforeach
                         </ul>
@@ -114,7 +116,8 @@
                 <div class="card">
                     <a href="{{ route('fixtures.index', $fixture_cache->slug) }}" class="recent-link">
                         @if (!empty($fixture_cache->league->sport) && !empty($fixture_cache->league->sport->getFirstMedia('stadium')))
-                        <img src="{{ $fixture_cache->league->sport->getFirstMedia('stadium')->getUrl() }}" class="card-img" alt="...">
+                            <img src="{{ $fixture_cache->league->sport->getFirstMedia('stadium')->getUrl() }}"
+                                 class="card-img" alt="...">
                         @endif
                         <div class="card-img-overlay">
                             <div class="game-info">
@@ -131,7 +134,7 @@
                         </div>
                     </a>
                 </div>
-                @endforeach
+            @endforeach
 
         </div>
     </div>

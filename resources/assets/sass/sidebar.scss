@@ -46,10 +46,17 @@
       border-top: 1px solid rgba(0,0,0,0.3);
       border-bottom: 1px solid rgba(0,0,0,0.3);
 
-      .league-view-all {
-        text-decoration: none;
-        color: $primary-font-color;
-        padding: 5px 10px;
+      .leagues-view-all {
+        width: 100%;
+        text-align: center;
+        padding: 5px;
+        background-color: $primary-accent-color;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        .league-view-all-link{
+          text-decoration: none;
+          color: white;
+        }
       }
 
       .leagues-list {

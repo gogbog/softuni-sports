@@ -17,7 +17,9 @@
 
                 <div class="collapse" id="mobile_nav_{{$sport_cache->id}}">
                     <div class="side-menu-leagues-container">
-                        <a href="{{ route('sports.index', $sport_cache->slug) }}" class="league-view-all">View all</a>
+                        <div class="leagues-view-all">
+                            <a href="{{ route('sports.index', $sport_cache->slug) }}" class="league-view-all-link">View all</a>
+                        </div>
                         <ul class="leagues-list">
                             @foreach($sport_cache->leagues as $sport_cache_league)
                                 <li class="league-item">
@@ -37,8 +39,6 @@
     <div class="match-view-bg-container">
         <img src="{{ asset('/images/soccer.jpg') }}" alt="" class="match-view-bg">
         <div class="match-view-bg-filter"></div>
-    </div>
-
         <div class="card sport-bg">
             <div class="card-header">
                 <p class="match-date">{{ \Carbon\Carbon::parse($fixture->date)->format('d/m/Y')}}</p>
@@ -83,6 +83,8 @@
                 </table>
             </div>
         </div>
+    </div>
+
 
 </div>
 

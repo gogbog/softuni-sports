@@ -93,3 +93,23 @@ body {
     }
   }
 }
+
+#pagination{
+  display: flex;
+  justify-content: center;
+  padding: 25px 0;
+  .pagination{
+    li{
+      &.disabled{
+        span{
+          background-color: $bg;
+          color: $primary-font-color;
+        }
+      }
+      a{
+        background-color: $bg-card;
+        color: $primary-font-color;
+      }
+    }
+  }
+}

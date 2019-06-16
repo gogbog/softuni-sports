@@ -1,11 +1,12 @@
 .match-view-bg-container {
   position: relative;
   width: 100%;
+  min-height: 60vh;
   overflow: hidden;
 
   .match-view-bg {
     width: 100%;
-    height: auto;
+    min-height: 60vh;
     object-fit: cover;
   }
 
@@ -21,58 +22,61 @@
     height: 100%;
     width: 100%;
   }
-}
-.sport-bg {
-  transform: translateY(-110%);
-  background: transparent;
-  border: none;
-  .card-header{
+  .sport-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
     border: none;
-    .match-date{
-      margin: 0;
-      color: white;
-    }
-  }
-  .game-info-container{
-    padding: 20px 10px;
-    .view-team {
-      margin: 10px 0;
-      text-align: center;
-      font-size: 20px;
-      font-weight: 400;
-      color: white;
-
-      p {
+    .card-header{
+      border: none;
+      .match-date{
         margin: 0;
+        color: white;
+      }
+    }
+    .game-info-container{
+      padding: 20px 10px;
+      .view-team {
+        margin: 10px 0;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 400;
+        color: white;
+
+        p {
+          margin: 0;
+        }
+      }
+
+      .view-result {
+        text-align: center;
+        font-size: 30px;
+        letter-spacing: 5px;
+        font-weight: 700;
+        color: white;
+
+        p {
+          margin: 0;
+        }
       }
     }
 
-    .view-result {
-      text-align: center;
-      font-size: 30px;
-      letter-spacing: 5px;
-      font-weight: 700;
-      color: white;
+    .odds-table-container{
+      padding: 10px;
+      .odds-table {
+        background: $table-bg;
+        tr {
+          &.odds-table-header {
+            th {
+              color: $primary-font-color;
+            }
+          }
 
-      p {
-        margin: 0;
-      }
-    }
-  }
-
-  .odds-table-container{
-    padding: 10px;
-    .odds-table {
-      background: $table-bg;
-      tr {
-        &.odds-table-header {
-          th {
+          td {
             color: $primary-font-color;
           }
-        }
-
-        td {
-          color: $primary-font-color;
         }
       }
     }

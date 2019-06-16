@@ -20,6 +20,11 @@ Route::group([
         'uses' => 'IndexController@index',
     ]);
 
+    Route::get('/search', [
+        'as' => 'search',
+        'uses' => 'IndexController@search',
+    ]);
+
     Route::get('/test', [
         'as' => 'test',
         'uses' => 'IndexController@test',

@@ -138,35 +138,37 @@
     <div class="view-wrapper contained">
         @yield('content')
     </div>
+
+    {{--Bottom navigationa--}}
+    {{--TUKA SLAGASH FOOTERA--}}
+    <footer class="main-bottom-footer">
+
+        <div class="main-bottom-footer-separator"></div>
+
+        <div class="main-bottom-footer-logo">
+            <a href="{{ route('index.index') }}">
+                <img src="{{ asset("images/softuni_logo.png") }}">
+            </a>
+        </div>
+
+        <div class="main-bottom-footer-text">
+            <p>A simple Sports Trading Platform solution created for the SoftUni Fest 2019 by:</p>
+        </div>
+
+        <div class="main-bottom-footer-credits">
+            <ul>
+                <li>George Dimitrov</li>
+                <li>Deyan Bozhilov</li>
+                <li>Ilia Baroff</li>
+            </ul>
+        </div>
+
+        <div class="main-bottom-footer-separator"></div>
+
+    </footer>
 </main>
 
-{{--Bottom navigationa--}}
-{{--TUKA SLAGASH FOOTERA--}}
-<footer class="main-bottom-footer">
 
-    <div class="main-bottom-footer-separator"></div>
-
-    <div class="main-bottom-footer-logo">
-        <a href="{{ route('index.index') }}">
-            <img src="{{ asset("images/softuni_logo.png") }}">
-        </a>
-    </div>
-
-    <div class="main-bottom-footer-text">
-        <p>A simple Sports Trading Platform solution created for the SoftUni Fest 2019 by:</p>
-    </div>
-
-    <div class="main-bottom-footer-credits">
-        <ul>
-            <li>George Dimitrov</li>
-            <li>Deyan Bozhilov</li>
-            <li>Ilia Baroff</li>
-        </ul>
-    </div>
-
-    <div class="main-bottom-footer-separator"></div>
-
-</footer>
 
 
 <script src="{{ mix('/js/app.js') }}"></script>

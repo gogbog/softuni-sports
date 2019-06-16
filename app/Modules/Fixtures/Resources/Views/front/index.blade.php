@@ -83,9 +83,39 @@
                 </table>
             </div>
         </div>
+
+        <div class="main-content-container">
+            <div class="main-container-box">
+                <div class="league-title">
+                    <div class="league-title-overlay">
+                        <p>Last matches from {{$fixture->league->title}}</p>
+                    </div>
+                </div>
+                @foreach ($last_matches as $fixture)
+                    <div class="match-card" style="z-index: 100">
+                        <a href="{{ route('fixtures.index', $fixture->slug) }}" class="match-card-link">
+                            <div class="team home-team">
+                                <p>{{ $fixture->homeTeam }}</p>
+                            </div>
+                            <div class="result">
+                                {{$fixture->homeTeamScore}} : {{$fixture->awayTeamScore}}
+                            </div>
+                            <div class="team away-team">
+                                <p>{{ $fixture->enemyTeam }}</p>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+        </div>
     </div>
 
 
 </div>
 
+
 @endsection
+
+
+
+

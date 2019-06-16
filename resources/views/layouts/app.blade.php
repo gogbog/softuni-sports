@@ -142,6 +142,8 @@
         @yield('content')
     </div>
 
+
+
     {{--Bottom navigationa--}}
     {{--TUKA SLAGASH FOOTERA--}}
     <footer class="main-bottom-footer">

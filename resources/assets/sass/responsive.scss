@@ -32,7 +32,12 @@
 
 // if screen is <= px, then do this blyat
 @media only screen and (max-width: 992px)  {
-
+  .match-view-bg-container {
+    .match-view-bg {
+      min-height: 400px;
+      object-fit: cover;
+    }
+  }
 
 }
 

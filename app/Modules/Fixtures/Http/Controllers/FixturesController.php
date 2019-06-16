@@ -14,7 +14,8 @@ class FixturesController extends Controller {
             abort(404);
         }
 
+        $last_matches = Fixture::active()->where('league_api_id', $fixture->league_api_id)->where('id', '!=', $fixture->id)->orderByDesc('date')->limit(10)->get();
 
-        return view('fixtures::front.index', compact('fixture'));
+        return view('fixtures::front.index', compact('fixture', 'last_matches'));
     }
 }

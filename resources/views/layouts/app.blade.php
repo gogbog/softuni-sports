@@ -86,9 +86,9 @@
                 <div class="side-menu-leagues-container">
                     <a href="{{ route('sports.index', $sport_cache->slug) }}" class="league-view-all">View all</a>
                     <ul class="leagues-list">
-                        @foreach($sport_cache->leagues as $league)
+                        @foreach($sport_cache->leagues as $sport_cache_league)
                             <li class="league-item">
-                                <a href="{{ route('leagues.index', $league->slug) }}" class="league-link">{{ $league->title }}</a>
+                                <a href="{{ route('leagues.index', $sport_cache_league->slug) }}" class="league-link">{{ $sport_cache_league->title }}</a>
                             </li>
                         @endforeach
                     </ul>

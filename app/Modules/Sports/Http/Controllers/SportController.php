@@ -15,9 +15,9 @@ class SportController extends Controller {
             abort(404);
         }
 
-        $data = $sport->leagues;
+        $leagues = $sport->leagues;
 
-        return view('index::front.index', compact('sport', 'data'));
+        return view('index::front.index', compact('sport', 'leagues'));
     }
 
 }

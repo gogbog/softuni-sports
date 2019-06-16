@@ -90,9 +90,9 @@
       height: 200px;
       position: relative;
       background-color: $bg-card;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      background-size: cover !important;
+      background-position: center !important;
+      background-repeat: no-repeat !important;
       margin: 5px 0;
       .sport-link-overlay{
         position: absolute;
@@ -106,7 +106,7 @@
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          color: $primary-font-color;
+          color: #ffffff;
         }
       }
     }

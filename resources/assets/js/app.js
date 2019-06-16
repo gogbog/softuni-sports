@@ -46,6 +46,7 @@ let trans = () => {
 let slideout = new Slideout({
     'panel': document.getElementById('panel'),
     'menu': document.getElementById('menu'),
+    'side': 'right',
     'padding': 256,
     'tolerance': 70
 });

@@ -36,9 +36,9 @@ class StoreFixtureRequest extends FormRequest
         }
 
         $rules['date'] = 'date';
-        $rules['homeTeamOdds'] = 'number';
-        $rules['awayTeamOdds'] = 'number';
-        $rules['drawOdds'] = 'number';
+        $rules['homeTeamOdds'] = 'digits';
+        $rules['awayTeamOdds'] = 'digits';
+        $rules['drawOdds'] = 'digits';
         $rules['visible'] = 'boolean';
 
         return $rules;

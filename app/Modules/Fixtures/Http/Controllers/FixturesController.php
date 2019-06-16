@@ -2,13 +2,10 @@
 
 namespace App\Modules\Fixtures\Http\Controllers;
 
-use App\Modules\Fixtures\Models\Fixture;
-use Illuminate\Http\Request;
-
 use App\Http\Controllers\Controller;
+use App\Modules\Fixtures\Models\Fixture;
 
-class FixturesController extends Controller
-{
+class FixturesController extends Controller {
     public function index($slug) {
 
         $fixture = Fixture::active()->with(['league', 'league.sport'])->where('slug', $slug)->first();

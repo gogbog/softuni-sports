@@ -113,7 +113,9 @@
             @foreach($fixtures_cache as $fixture_cache)
                 <div class="card">
                     <a href="{{ route('fixtures.index', $fixture_cache->slug) }}" class="recent-link">
-                        <img src="https://via.placeholder.com/150" class="card-img" alt="...">
+                        @if (!empty($fixture_cache->league->sport) && !empty($fixture_cache->league->sport->getFirstMedia('stadium')))
+                        <img src="{{ $fixture_cache->league->sport->getFirstMedia('stadium')->getUrl() }}" class="card-img" alt="...">
+                        @endif
                         <div class="card-img-overlay">
                             <div class="game-info">
                                 <div class="card-team card-home-team">

@@ -27,6 +27,8 @@ class Sport extends Model implements HasMedia
         'visible' => 'boolean'
     ];
 
+    protected $with = ['media'];
+
     public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()->generateSlugsFrom('title')->saveSlugsTo('slug')->doNotGenerateSlugsOnUpdate();

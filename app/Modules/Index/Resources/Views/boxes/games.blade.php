@@ -1,4 +1,14 @@
-<div class="selected-sport-box contained" style="background-image: url('{{ asset('images/e-sport.jpg') }}');">
+@php
+    $media = null;
+    if (!empty($sport) && !empty($sport->getFirstMedia('stadium'))) {
+        $media = $sport->getFirstMedia('stadium')->getUrl();
+    }
+
+    if (!empty($league) && !empty($league->sport->getFirstMedia('stadium'))) {
+            $media = $league->sport->getFirstMedia('stadium')->getUrl();
+    }
+@endphp
+<div class="selected-sport-box contained" @if (!empty($media)) style="background-image: url('{{$media}}');" @else style="background-image: url('{{ asset('images/e-sport.jpg') }}');" @endif>
     <div class="sport-box-overlay">
         <p>@if (!empty($league)) {{ $league->title }} @else {{ $sport->title }} @endif</p>
     </div>

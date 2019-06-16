@@ -103,13 +103,7 @@ $(document).ready(function () {
     })
 });
 
-// sidebar toggler button animation toggle
-//
-//
-// let sidebarToggleBtn = document.getElementById("top-navbar-sidebar-toggler");
-// sidebarToggleBtn.addEventListener( "click", function () {
-//     sidebarToggleBtn.classList.toggle("visible");
-//
+
 
 // -----------------------------------------
 //             HIDE NAV ON SCROLL

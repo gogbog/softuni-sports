@@ -36,8 +36,23 @@
 
     <div class="main-content-container pl-lg-3 px-md-2 px-2 pr-lg-0">
 
-        dr
+        @foreach($sports as $sport)
 
+            <a href="{{ route('sports.index',$sport->slug) }}" class="sport-main-link">
+                <div class="sport-link-container"
+                     @if(!empty($sport->media()))
+                     style="background: url('{{ $sport->getFirstMedia() }}')"
+                @else
+                     style="background: url('{{ asset('/img/soccer.jpg') }}')"
+                @endif
+                >
+                    <div class="sport-link-overlay">
+                        <p> {{ $sport->title }} </p>
+                    </div>
+                </div>
+            </a>
+
+        @endforeach
 
     </div>
 

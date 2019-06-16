@@ -36,7 +36,6 @@
                 <a href="{{ route('fixtures.index', $fixture->slug) }}" class="match-card-link">
                     <div class="team home-team">
                         <p>{{ $fixture->homeTeam }}</p>
-                        <p>{{ $fixture->id }}</p>
                     </div>
                     <div class="result">
                         {{$fixture->homeTeamScore}} : {{$fixture->awayTeamScore}}

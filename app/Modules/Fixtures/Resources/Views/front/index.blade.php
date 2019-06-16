@@ -98,6 +98,7 @@
             </div>
         </div>
 
+            @if ($last_matches->isNotEmpty())
         <div class="main-content-container">
             <div class="main-container-box">
                 <div class="league-title">
@@ -122,6 +123,7 @@
                 @endforeach
             </div>
         </div>
+                @endif
     </div>
 
 

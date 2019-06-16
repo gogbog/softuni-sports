@@ -37,7 +37,12 @@
 
 <div class="container">
     <div class="match-view-bg-container">
-        <img src="{{ asset('/images/soccer.jpg') }}" alt="" class="match-view-bg">
+        @if (!empty($fixture->league->sport->getFirstMedia('stadium')))
+            <img src="{{ $fixture->league->sport->getFirstMedia('stadium')->getUrl() }}" alt="" class="match-view-bg">
+        @else
+            <img src="{{ asset('/images/soccer.jpg') }}" alt="" class="match-view-bg">
+
+        @endif
         <div class="match-view-bg-filter"></div>
         <div class="card sport-bg">
             <div class="card-header">
@@ -69,6 +74,15 @@
 
             <div class="odds-table-container">
 
+                <select name="odds-switch" id="" class="odds-switcher">
+                    <option value="">decimal</option>
+                    <option value="">american</option>
+                </select>
+
+                <span class="d-none" id="homeOdds">{{ $fixture->homeTeamOdds }}</span>
+                <span class="d-none" id="drawOdds">{{ $fixture->drawOdds }}</span>
+                <span class="d-none" id="awayOdds">{{ $fixture->awayTeamOdds }}</span>
+
                 <table class="table odds-table table-bordered">
                     <tr class="odds-table-header">
                         <th>Home Odds</th>
@@ -76,9 +90,9 @@
                         <th>Away Odds</th>
                     </tr>
                     <tr>
-                        <td>{{ $fixture->homeTeamOdds }}</td>
-                        <td>{{ $fixture->drawOdds }}</td>
-                        <td>{{ $fixture->awayTeamOdds }}</td>
+                        <td id="tableHomeTD">{{ $fixture->homeTeamOdds }}</td>
+                        <td id="tableDrawTD">{{ $fixture->drawOdds }}</td>
+                        <td id="tableAwayTD">{{ $fixture->awayTeamOdds }}</td>
                     </tr>
                 </table>
             </div>

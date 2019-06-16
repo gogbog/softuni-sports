@@ -13,7 +13,7 @@ class LeaguesController extends Controller {
             abort(404);
         }
 
-        $data = $league->fixtures;
+        $data = $league->fixtures->paginate(20);
 
 
         return view('index::front.index', compact('league', 'data'));

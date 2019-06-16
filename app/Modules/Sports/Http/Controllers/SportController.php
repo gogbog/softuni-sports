@@ -15,7 +15,7 @@ class SportController extends Controller {
             abort(404);
         }
 
-        $leagues = $sport->leagues;
+        $leagues = $sport->leagues->paginate(3);
 
         return view('index::front.index', compact('sport', 'leagues'));
     }

@@ -39,7 +39,9 @@
 
     {{-- website logo --}}
     <div class="main-top-navbar-logo">
+        <a href="{{ route('index.index') }}">
         <img src="{{ asset("images/softuni_logo.png") }}">
+        </a>
     </div>
 
     <div class="main-top-phantom"></div>

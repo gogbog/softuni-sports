@@ -26,9 +26,10 @@
                             </div>
                         </a>
                     </div>
-                @endforeach
-        </div>
+                @endforeach</div>
     @endforeach
+    {{ $leagues->links('particals.breadcrumbs') }}
+
 @else
     <div class="main-container-box">
         @foreach ($data as $fixture)
@@ -46,6 +47,7 @@
                 </a>
             </div>
         @endforeach
+        {{ $data->links('particals.breadcrumbs') }}
     </div>
 @endif
 

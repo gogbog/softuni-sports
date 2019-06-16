@@ -13,7 +13,7 @@ class StoreFixtureRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,24 @@ class StoreFixtureRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
-        ];
+        $rules = [];
+
+
+        $rules['title'] = 'required|string';
+
+        if ($this->method() == 'PATCH' || $this->method() == 'PUT') {
+            $rules['slug'] = 'nullable|string|unique:fixtures,slug,' . $this->route('fixture');
+
+        } else {
+            $rules['slug'] = 'nullable|string|unique:fixtures,slug';
+        }
+
+        $rules['date'] = 'date';
+        $rules['homeTeamOdds'] = 'number';
+        $rules['awayTeamOdds'] = 'number';
+        $rules['drawOdds'] = 'number';
+        $rules['visible'] = 'boolean';
+
+        return $rules;
     }
 }

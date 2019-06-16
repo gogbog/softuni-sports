@@ -47,7 +47,7 @@ let slideout = new Slideout({
     'panel': document.getElementById('panel'),
     'menu': document.getElementById('menu'),
     'side': 'right',
-    'padding': 256,
+    'padding': 300,
     'tolerance': 70
 });
 
@@ -102,7 +102,6 @@ $(document).ready(function () {
         }
     })
 });
-
 
 
 // -----------------------------------------

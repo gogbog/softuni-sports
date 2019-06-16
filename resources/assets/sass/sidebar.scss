@@ -3,6 +3,9 @@
   background: $bg-card;
   box-shadow: $small-material-shadow;
   border-radius: 0;
+  &#mobile-side{
+    margin-top: 56px;
+  }
 
   .side-bar-inner{
 

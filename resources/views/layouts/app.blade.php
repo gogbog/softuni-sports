@@ -72,7 +72,7 @@
 </nav>
 
 <nav id="menu">
-    <div class="side-bar-container">
+    <div class="side-bar-container" id="mobile-side">
 
         <div class="side-bar-inner">
             @foreach($sports_cache as $sport_cache)
@@ -94,7 +94,7 @@
                             @foreach($sport_cache->leagues as $sport_cache_league)
                                 <li class="league-item">
                                     <a href="{{ route('leagues.index', $sport_cache_league->slug) }}"
-                                       class="league-link">{{ $sport_cache_league->title }}</a>
+                                       class="league-link">{{ $sport_cache_league->title }} <span class="badge">{{ $sport_cache_league->fixtures_count }}</span></a>
                                 </li>
                             @endforeach
                         </ul>

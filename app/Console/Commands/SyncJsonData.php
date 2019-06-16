@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Modules\Fixtures\Models\Fixture;
 use App\Modules\Leagues\Models\League;
 use App\Modules\Sports\Models\Sport;
+use Carbon\Carbon;
 use DateTime;
 use Illuminate\Console\Command;
 use function Schnittstabil\JsonDecodeFile\jsonDecodeFile;
@@ -47,6 +48,9 @@ class SyncJsonData extends Command
      */
     public function handle()
     {
+        $starttime = microtime(true);
+        $this->info('Command starting now - ' . Carbon::now());
+
         foreach ($this->data as $api_fixture) {
             $this->info($api_fixture->eventName);
 
@@ -99,13 +103,17 @@ class SyncJsonData extends Command
 
 
         }
+        $endtime = microtime(true);
+        $timediff = $endtime - $starttime;
+        $this->info($this->secondsToTime($timediff) . ' - ' . Carbon::now());
     }
 
-     private function hexToStr($hex){
-        $string='';
-        for ($i=0; $i < strlen($hex)-1; $i+=2){
-            $string .= chr(hexdec($hex[$i].$hex[$i+1]));
-        }
-        return $string;
+    private function secondsToTime($s)
+    {
+        $h = floor($s / 3600);
+        $s -= $h * 3600;
+        $m = floor($s / 60);
+        $s -= $m * 60;
+        return $h . ':' . sprintf('%02d', $m) . ':' . sprintf('%02d', $s);
     }
 }

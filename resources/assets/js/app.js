@@ -155,3 +155,30 @@ $(document).ready(function () {
 //
 //     lastScrollTop = st;
 // }
+
+let searchForm = document.getElementById("search_form");
+let searchFormInput = document.getElementById("search_form_input");
+searchForm.addEventListener( "click", function () {
+    console.log("searchform clicked");
+    searchForm.classList.add("active");
+    searchFormInput.focus();
+});
+
+searchForm.addEventListener( "focusout", function () {
+    console.log("clicked somewhere else");
+    searchForm.classList.remove("active");
+});
+
+let searchFormMobile = document.getElementById("search_form_mobile");
+let searchFormInputMobile = document.getElementById("search_form_input_mobile");
+$(searchFormMobile).click( function () {
+    if ( $(searchFormInputMobile).is(":hidden") ) {
+        $(searchFormInputMobile).slideDown( "slow" );
+        searchFormInputMobile.focus();
+    }
+});
+
+searchFormInputMobile.addEventListener( "focusout", function () {
+    console.log("clicked somewhere else");
+    $(searchFormInputMobile).slideUp( "slow" )
+});

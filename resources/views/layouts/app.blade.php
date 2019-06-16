@@ -10,7 +10,7 @@
     }
 
 @endphp
-<!doctype html>
+        <!doctype html>
 <html lang="{{ app()->getLocale() }}" data-theme="{{ $isDarkTheme ? 'dark' : 'light' }}">
 <head>
     <meta charset="UTF-8">
@@ -21,6 +21,7 @@
     <title>{{ config('app.name', 'SoftUniSports') }}</title>
     {{--    <link rel="icon" href="{{ asset('img/dark-logo.png') }}">--}}
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 <body>
 
@@ -34,25 +35,34 @@
         <div class="bar3"></div>
     </div>
 
-    <div class="contained">
-
-        {{-- website logo --}}
-        <div class="main-top-navbar-logo">
-            {{--<img src="#">--}}
-            <h3>SOFTUNI FEST 2019</h3>
-        </div>
-
-        {{-- search form --}}
-        <div class="main-top-navbar-search-form">
-
-        </div>
-
-        {{-- theme toggler --}}
-        <div class="main-top-navbar-theme-switcher">
-            <input type="checkbox" id="theme-switch" class="theme-switch-input"/>
-        </div>
-
+    {{-- website logo --}}
+    <div class="main-top-navbar-logo">
+        <img src="{{ asset("images/softuni_logo.png") }}">
     </div>
+
+    <div class="main-top-phantom"></div>
+
+    {{-- search form --}}
+    <div class="main-top-navbar-search-form">
+        <form class="search-form" action="" id="search_form">
+            <input class="search-form-input" id="search_form_input" type="search" placeholder="search for sport, league or match">
+            <i class="fa fa-search search-form-icon"></i>
+        </form>
+
+        <form action="" class="search-form-mobile" id="search_form_mobile">
+
+            <i class="fa fa-search search-form-icon"></i>
+        </form>
+    </div>
+
+    {{-- theme switcher --}}
+    <div class="main-top-navbar-theme-switcher">
+        <input class="switch_input theme-switch-input" type="checkbox" id="theme-switch">
+        <label aria-hidden="true" class="switch_label" for="theme-switch">On</label>
+        <div aria-hidden="true" class="switch_marker"></div>
+    </div>
+
+    <input class="search-form-input_mobile" id="search_form_input_mobile" type="search" placeholder="search for sport, league or match">
 </nav>
 
 <nav id="menu">
@@ -150,6 +160,7 @@
 
 {{--Bottom navigationa--}}
 {{--TUKA SLAGASH FOOTERA--}}
+
 
 <script src="{{ mix('/js/app.js') }}"></script>
 </body>

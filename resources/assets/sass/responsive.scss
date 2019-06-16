@@ -1,18 +1,31 @@
 // if screen is <= px, then do this blyat
 @media only screen and (max-width: 1100px)  {
 
-  .main-top-navbar-logo {
+  .main-top-phantom {
     display: none;
+  }
+
+  .main-top-navbar-logo {
+    margin: auto;
+    padding-left: 45px;
   }
 
   .main-top-navbar-sidebar-toggle-btn {
     display: block;
   }
 
-  .view-wrapper{
+  .view-wrapper {
     .side-bar-container{
       display: none;
     }
+  }
+
+  .search-form {
+    display: none;
+  }
+
+  .search-form-mobile {
+    display: block;
   }
 
 }

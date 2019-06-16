@@ -25,6 +25,8 @@ html {
     $bg: #f9f9f9;
     $bg-card: #fff;
     $primary-font-color: #313131;
+    $primary-accent-color: #1976d2;
+    $secondary-accent-color: #303f9f;
 
     //COMPONENT STYLES
     @import 'helpers';
@@ -44,6 +46,8 @@ html {
     $bg: #333;
     $bg-card: #444;
     $primary-font-color: #f1f1f1;
+    $primary-accent-color: #303f9f;
+    $secondary-accent-color: #1976d2;
 
     //COMPONENT STYLES
     @import 'helpers';

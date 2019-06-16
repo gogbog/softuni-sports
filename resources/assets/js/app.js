@@ -9,6 +9,7 @@ global.owlCarousel = require('owl.carousel/dist/owl.carousel.min.js');
 //             THEME CHANGE
 // -----------------------------------------
 
+let checkbox = document.querySelector('input[id=theme-switch]');
 window.onload = function () {
     if (document.cookie.split(';').filter((item) => item.includes('dark=true')).length) {
         document.documentElement.setAttribute('data-theme', 'dark');
@@ -17,8 +18,6 @@ window.onload = function () {
         document.documentElement.setAttribute('data-theme', 'light');
     }
 };
-
-let checkbox = document.querySelector('input[id=theme-switch]');
 
 checkbox.addEventListener('change', function () {
     if (this.checked) {
@@ -31,6 +30,39 @@ checkbox.addEventListener('change', function () {
         document.cookie = "dark=false";
     }
 });
+
+let odds_checkbox = document.querySelector('input[id=odds-switch]');
+let table_rows = document.querySelectorAll('.odds-table td');
+
+window.onload = function () {
+    if (document.cookie.split(';').filter((item) => item.includes('odd=american')).length) {
+        odds_checkbox.setAttribute('checked', true);
+        table_rows.forEach(function (row) {
+            row.setAttribute('data-odd', 'american');
+        });
+    } else {
+        table_rows.forEach(function (row) {
+            row.setAttribute('data-odd', 'decimal');
+        });
+    }
+
+};
+if (document.body.contains(odds_checkbox)){
+
+    odds_checkbox.addEventListener('change', function () {
+        if (this.checked) {
+            table_rows.forEach(function (row) {
+                row.setAttribute('data-odd', 'american');
+            });
+            document.cookie = "odd=american";
+        } else {
+            table_rows.forEach(function (row) {
+                row.setAttribute('data-odd', 'decimal');
+            });
+            document.cookie = "odd=decimal";
+        }
+    });
+}
 
 let trans = () => {
     document.documentElement.classList.add('transition');

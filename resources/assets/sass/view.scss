@@ -82,3 +82,104 @@
     }
   }
 }
+
+
+.odd-switch-container{
+  padding: 15px 10px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .decimal{
+    flex: 1;
+    color: white;
+    text-align: right;
+    margin: 0;
+    padding: 0 10px;
+  }
+  .american{
+    text-align: left;
+    flex: 1;
+    color: white;
+    margin: 0;
+    padding: 0 10px;
+  }
+  // style
+  $switch-width: 48px;
+  $switch-height: 24px;
+  $switch-padding: 3px;
+
+  // animation
+  $switch-animation-duration: 0.2s;
+
+  // colours
+  $color-primary: #1976d2;
+  $color-contrast-low: #303f9f;
+  $color-white: #fff;
+
+  .main-top-navbar-theme-switcher {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    position: relative;
+    width: $switch-width;
+    height: $switch-height;
+    border-radius: 50em;
+    padding: $switch-padding 0;
+    float: right;
+    margin-right: 10px;
+  }
+
+  .switch_input, .switch_label {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .switch_input {
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    pointer-events: none;
+
+    &:checked + .switch_label {
+      background-color: $color-primary;
+    }
+
+    &:checked + .switch_label + .switch_marker {
+      left: calc(100% - #{$switch-height} + #{$switch-padding});
+    }
+  }
+
+  .switch_label {
+    width: 100%;
+    height: 100%;
+    color: transparent;
+    user-select: none;
+    background-color: $color-contrast-low;
+    border-radius: inherit;
+    z-index: 1;
+    transition: background $switch-animation-duration;
+  }
+
+  .switch_marker {
+    position: relative;
+    background-color: $color-white;
+    width: calc(#{$switch-height} - #{$switch-padding} * 2);
+    height: calc(#{$switch-height} - #{$switch-padding} * 2);
+    border-radius: 50%;
+    z-index: 2;
+    pointer-events: none;
+    box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.25);
+    left: $switch-padding;
+    transition: left $switch-animation-duration;
+    will-change: left;
+  }
+
+  // !THEME SWITCHER //
+
+}
+

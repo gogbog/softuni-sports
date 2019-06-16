@@ -9,8 +9,10 @@
     display: block;
   }
 
-  .side-bar-container{
-    display: none;
+  .view-wrapper{
+    .side-bar-container{
+      display: none;
+    }
   }
 
 }

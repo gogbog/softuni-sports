@@ -20,6 +20,9 @@
       background: transparent;
       border: none;
       padding: 10px 20px;
+      color: $primary-font-color;
+      font-size: 18px;
+      font-weight: 700;
 
       &:focus {
         outline: 0;
@@ -31,7 +34,6 @@
     padding: 10px;
 
     .league-view-all {
-      padding: 10px;
       text-decoration: none;
       color: $primary-font-color;
     }

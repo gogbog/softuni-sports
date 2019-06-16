@@ -56,11 +56,93 @@
 </nav>
 
 <nav id="menu">
+    <div class="side-bar-container">
 
+        <div class="sport-collapsible-link">
+            <button class="collapsible-trigger"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#sportLeagues"
+                    aria-expanded="false"
+                    aria-controls="sportLeagues">
+                Sport Name
+            </button>
+        </div>
+
+        <div class="collapse" id="sportLeagues">
+            <div class="side-menu-leagues-container">
+                <a href="#" class="league-view-all">View all</a>
+                <ul class="leagues-list">
+                    <li class="league-item">
+                        <a href="#" class="league-link">Premier League</a>
+                    </li>
+                    <li class="league-item">
+                        <a href="#" class="league-link">Premier League</a>
+                    </li>
+                    <li class="league-item">
+                        <a href="#" class="league-link">Premier League</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="sport-collapsible-link">
+            <button class="collapsible-trigger"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#sportLeagues1"
+                    aria-expanded="false"
+                    aria-controls="sportLeagues1">
+                Sport Name
+            </button>
+        </div>
+
+        <div class="collapse" id="sportLeagues1">
+            <div class="side-menu-leagues-container">
+                <a href="#" class="league-view-all">View all</a>
+                <ul class="leagues-list">
+                    <li class="league-item">
+                        <a href="#" class="league-link">Premier League</a>
+                    </li>
+                    <li class="league-item">
+                        <a href="#" class="league-link">Premier League</a>
+                    </li>
+                    <li class="league-item">
+                        <a href="#" class="league-link">Premier League</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
 
 </nav>
 
 <main id="panel">
+    <div class="other-sports-games" data-slideout-ignore>
+        <div class="owl-carousel other-sports-games-carousel">
+
+            <div class="card">
+                <a href="" class="recent-link">
+                    <img src="https://via.placeholder.com/150" class="card-img" alt="...">
+                    <div class="card-img-overlay">
+                        <div class="game-info">
+                            <div class="card-team card-home-team">
+                                Chelsea
+                            </div>
+                            <div class="card-result">
+                                1 : 0
+                            </div>
+                            <div class="card-team card-home-team">
+                                Manchester city
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
     <div class="view-wrapper contained">
         @yield('content')
     </div>

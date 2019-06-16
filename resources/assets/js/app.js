@@ -55,10 +55,12 @@ slideout.on('translate', function () {
 });
 
 slideout.on('beforeopen', function () {
+    $('.main-top-navbar-sidebar-toggle-btn').addClass('visible');
     $('#menu').show();
 });
 
 slideout.on('close', function () {
+    $('.main-top-navbar-sidebar-toggle-btn').removeClass('visible');
     $('#menu').hide();
 });
 
@@ -67,7 +69,7 @@ slideout.on('beforeclose', function () {
 });
 
 // // Toggle button
-document.querySelector('.main-top-navbar-sidebar-toggle-btn').addEventListener('click', function() {
+document.querySelector('.main-top-navbar-sidebar-toggle-btn').addEventListener('click', function () {
     $(this).addClass('visible');
     slideout.toggle();
 });
@@ -77,31 +79,36 @@ document.querySelector('.main-top-navbar-sidebar-toggle-btn').addEventListener('
 // -----------------------------------------
 
 $(document).ready(function () {
-    $('.owl-carousel').owlCarousel({
-        loop:true,
-        margin:10,
-        nav:true,
-        responsive:{
-            0:{
-                items:1
+    $('.other-sports-games-carousel').owlCarousel({
+        loop: true,
+        margin: 1,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 1
             },
-            600:{
-                items:3
+            800: {
+                items: 2
             },
-            1000:{
-                items:5
+            1100: {
+                items: 3
+            },
+            1400: {
+                items: 5
             }
         }
     })
-    });
+});
 
-    // sidebar toggler button animation toggle
-    //
-    //
-    // let sidebarToggleBtn = document.getElementById("top-navbar-sidebar-toggler");
-    // sidebarToggleBtn.addEventListener( "click", function () {
-    //     sidebarToggleBtn.classList.toggle("visible");
-    //
+// sidebar toggler button animation toggle
+//
+//
+// let sidebarToggleBtn = document.getElementById("top-navbar-sidebar-toggler");
+// sidebarToggleBtn.addEventListener( "click", function () {
+//     sidebarToggleBtn.classList.toggle("visible");
+//
 
 // -----------------------------------------
 //             HIDE NAV ON SCROLL

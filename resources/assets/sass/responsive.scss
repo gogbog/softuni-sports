@@ -37,3 +37,11 @@
 
 }
 
+// if screen is <= px, then do this blyat
+@media only screen and (max-width: 400px)  {
+
+  .main-bottom-footer-credits ul {
+    display: block;
+  }
+
+}

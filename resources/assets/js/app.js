@@ -173,12 +173,12 @@ let searchFormMobile = document.getElementById("search_form_mobile");
 let searchFormInputMobile = document.getElementById("search_form_input_mobile");
 $(searchFormMobile).click( function () {
     if ( $(searchFormInputMobile).is(":hidden") ) {
-        $(searchFormInputMobile).slideDown( "slow" );
+        $(searchFormInputMobile).slideDown( "fast" );
         searchFormInputMobile.focus();
     }
 });
 
 searchFormInputMobile.addEventListener( "focusout", function () {
     console.log("clicked somewhere else");
-    $(searchFormInputMobile).slideUp( "slow" )
+    $(searchFormInputMobile).slideUp( "fast" )
 });

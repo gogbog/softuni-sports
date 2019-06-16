@@ -42,7 +42,7 @@
             <a href="{{ route('sports.index',$sport->slug) }}" class="sport-main-link">
                 <div class="sport-link-container"
                      @if (!empty($sport->getFirstMedia('stadium')))
-                     style="background: url('{{ $sport->getFirstMedia('stadium')->getUrl('summary') }}')"
+                     style="background: url('{{ $sport->getFirstMedia('stadium')->getUrl() }}')"
                      @else
                      style="background: url('{{ asset('/img/soccer.jpg') }}')"
                         @endif

@@ -22,7 +22,8 @@
                             @foreach($sport_cache->leagues as $sport_cache_league)
                                 <li class="league-item">
                                     <a href="{{ route('leagues.index', $sport_cache_league->slug) }}"
-                                       class="league-link">{{ $sport_cache_league->title }} <span class="badge">{{ $sport_cache_league->fixtures_count }}</span></a>
+                                       class="league-link">{{ $sport_cache_league->title }} <span
+                                                class="badge">{{ $sport_cache_league->fixtures_count }}</span></a>
                                 </li>
                             @endforeach
                         </ul>
@@ -40,11 +41,11 @@
 
             <a href="{{ route('sports.index',$sport->slug) }}" class="sport-main-link">
                 <div class="sport-link-container"
-                     @if(!empty($sport->media()))
-                     style="background: url('{{ $sport->getFirstMedia() }}')"
-                @else
+                     @if (!empty($sport->getFirstMedia('stadium')))
+                     style="background: url('{{ $sport->getFirstMedia('stadium')->getUrl() }}')"
+                     @else
                      style="background: url('{{ asset('/img/soccer.jpg') }}')"
-                @endif
+                        @endif
                 >
                     <div class="sport-link-overlay">
                         <p> {{ $sport->title }} </p>

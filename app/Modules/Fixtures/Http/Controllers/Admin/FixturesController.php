@@ -37,7 +37,7 @@ class FixturesController extends BaseAdministrationController
             'awayTeamOdds' => ['title' => trans('fixtures::admin.awayTeamOdds'), 'orderable' => false],
             'drawOdds' => ['title' => trans('fixtures::admin.drawOdds'), 'orderable' => false],
             'visible' => ['title' => trans('fixtures::admin.visible'), 'orderable' => false],
-            'created_at' => ['title' => trans('fixtures::admin.created_at'), 'orderable' => false],
+            'date' => ['title' => trans('fixtures::admin.date'), 'orderable' => false],
             'action' => ['title' => trans('fixtures::admin.action'), 'orderable' => false]
         ];
 

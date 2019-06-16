@@ -25,7 +25,7 @@ class Fixture extends Model
         'homeTeamOdds' => 'float',
         'awayTeamOdds' => 'float',
         'drawOdds' => 'float',
-        'date' => 'date',
+        'date' => 'datetime',
     ];
 
     public function getSlugOptions(): SlugOptions
@@ -36,4 +36,10 @@ class Fixture extends Model
     public function league() {
         return $this->hasOne(League::class, 'api_id', 'league_api_id');
     }
+
+    public function scopeActive($query)
+    {
+        return $query->where($this->table . '.visible', 1);
+    }
+
 }

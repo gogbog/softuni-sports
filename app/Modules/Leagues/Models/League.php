@@ -2,6 +2,7 @@
 
 namespace App\Modules\Leagues\Models;
 
+use App\Modules\Fixtures\Models\Fixture;
 use App\Modules\Sports\Models\Sport;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -30,4 +31,14 @@ class League extends Model {
     public function sport() {
         return $this->hasOne(Sport::class, 'api_id', 'sport_api_id');
     }
+
+    public function fixtures() {
+        return $this->hasMany(Fixture::class, 'league_api_id', 'api_id')->active();
+    }
+
+    public function scopeActive($query)
+    {
+        return $query->where($this->table . '.visible', 1);
+    }
+
 }

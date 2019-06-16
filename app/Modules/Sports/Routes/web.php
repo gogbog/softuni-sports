@@ -11,8 +11,14 @@
 |
 */
 
-Route::group(['prefix' => 'sports'], function () {
-    Route::get('/', function () {
-        dd('This is the Sports module index page. Build something great!');
-    });
+Route::group([
+    'as' => 'sports.'
+], function () {
+
+
+    Route::get('/{slug}', [
+        'as' => 'index',
+        'uses' => 'SportController@index',
+    ]);
+
 });

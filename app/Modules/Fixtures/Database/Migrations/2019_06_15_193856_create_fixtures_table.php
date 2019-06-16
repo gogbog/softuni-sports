@@ -25,7 +25,7 @@ class CreateFixturesTable extends Migration
             $table->boolean('visible')->default(true);
             $table->unsignedBigInteger('api_id')->nullable()->unique();
             $table->unsignedBigInteger('league_api_id')->nullable();
-            $table->date('date');
+            $table->dateTime('date');
             $table->integer('homeTeamScore');
             $table->integer('awayTeamScore');
             $table->decimal('homeTeamOdds', 2,1)->nullable();

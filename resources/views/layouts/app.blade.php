@@ -70,63 +70,31 @@
     <div class="side-bar-container">
 
         <div class="side-bar-inner">
-
+        @foreach($sports_cache as $sport_cache)
             <div class="sport-collapsible-link">
                 <button class="collapsible-trigger"
                         type="button"
                         data-toggle="collapse"
-                        data-target="#sportLeagues"
+                        data-target="#mobile_nav_{{ $sport_cache->id }}"
                         aria-expanded="false"
-                        aria-controls="sportLeagues">
-                    Sport Name <span class="badge">4</span>
+                        aria-controls="mobile_nav_{{$sport_cache->id}}">
+                    {{$sport_cache->title}} <span class="badge">4</span>
                 </button>
             </div>
 
-            <div class="collapse" id="sportLeagues">
+            <div class="collapse" id="mobile_nav_{{$sport_cache->id}}">
                 <div class="side-menu-leagues-container">
-                    <a href="#" class="league-view-all">View all</a>
+                    <a href="{{ route('sports.index', $sport_cache->slug) }}" class="league-view-all">View all</a>
                     <ul class="leagues-list">
-                        <li class="league-item">
-                            <a href="#" class="league-link">Premier League</a>
-                        </li>
-                        <li class="league-item">
-                            <a href="#" class="league-link">Premier League</a>
-                        </li>
-                        <li class="league-item">
-                            <a href="#" class="league-link">Premier League</a>
-                        </li>
+                        @foreach($sport_cache->leagues as $league)
+                            <li class="league-item">
+                                <a href="{{ route('leagues.index', $league->slug) }}" class="league-link">{{ $league->title }}</a>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
-
-            <div class="sport-collapsible-link">
-                <button class="collapsible-trigger"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="#sportLeagues1"
-                        aria-expanded="false"
-                        aria-controls="sportLeagues1">
-                    Sport Name
-                </button>
-            </div>
-
-            <div class="collapse" id="sportLeagues1">
-                <div class="side-menu-leagues-container">
-                    <a href="#" class="league-view-all">View all</a>
-                    <ul class="leagues-list">
-                        <li class="league-item">
-                            <a href="#" class="league-link">Premier League</a>
-                        </li>
-                        <li class="league-item">
-                            <a href="#" class="league-link">Premier League</a>
-                        </li>
-                        <li class="league-item">
-                            <a href="#" class="league-link">Premier League</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
+        @endforeach
         </div>
 
     </div>
@@ -156,11 +124,6 @@
                 </a>
             </div>
 
-        </div>
-    </div>
-    <div class="selected-sport-box contained"  style="background-image: url('{{ asset('images/e-sport.jpg') }}');">
-        <div class="sport-box-overlay">
-            <p>Football</p>
         </div>
     </div>
     <div class="view-wrapper contained">

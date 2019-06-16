@@ -12,7 +12,8 @@ class IndexController extends Controller
 {
     public function index()
     {
-        return view('index::front.index');
+        $data = [];
+        return view('index::front.index', compact('data'));
     }
 
     public function view()

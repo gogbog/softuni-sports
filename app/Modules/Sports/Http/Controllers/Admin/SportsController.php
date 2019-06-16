@@ -42,7 +42,7 @@ class SportsController extends BaseAdministrationController
         });
         $table->addColumn('action', function ($sport) {
             $action = AdministrationField::edit(Administration::route('sports.edit', $sport->id));
-
+            $action .= AdministrationField::media($sport, ['icon', 'stadium']);
             if (empty($sport->deleted_at)) {
                 $action .= AdministrationField::delete(Administration::route('sports.destroy', $sport->id));
             } else {

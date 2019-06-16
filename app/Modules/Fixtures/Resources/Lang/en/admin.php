@@ -14,4 +14,5 @@ return [
     'homeTeamOdds' => 'homeTeamOdds',
     'awayTeamOdds' => 'awayTeamOdds',
     'drawOdds' => 'drawOdds',
+    'date' => 'Date'
 ];

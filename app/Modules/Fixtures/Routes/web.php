@@ -10,9 +10,14 @@
 | to using a Closure or controller method. Build something great!
 |
 */
+Route::group([
+    'as' => 'fixtures.'
+], function () {
 
-Route::group(['prefix' => 'fixtures'], function () {
-    Route::get('/', function () {
-        dd('This is the Fixtures module index page. Build something great!');
-    });
+
+    Route::get('/fixtures/{slug}', [
+        'as' => 'index',
+        'uses' => 'FixturesController@index',
+    ]);
+
 });

@@ -73,7 +73,8 @@ class SyncJsonData extends Command
             if (empty($fixture->id)) {
 
                 $teams = explode('vs', $api_fixture->eventName);
-                $newDate = DateTime::createFromFormat("Y-m-d\TG:i:s.uO",$api_fixture->eventDate);
+                $newDate = DateTime::createFromFormat("Y-m-d\TH:i:s.uO",$api_fixture->eventDate);
+                $this->info($newDate->format("Y-m-d H:i:s"));
                 $fixture->title = utf8_encode($api_fixture->eventName);
                 $fixture->date = $newDate->format("Y-m-d H:i:s");
                 $fixture->league_api_id = $api_fixture->league->id;

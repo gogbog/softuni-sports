@@ -191,3 +191,52 @@ searchForm.addEventListener( "click", function () {
 searchForm.addEventListener( "focusout", function () {
     searchForm.classList.remove("active");
 });
+
+//Converter
+let odds = {
+    home: document.getElementById("homeOdds").innerHTML,
+    draw: document.getElementById("drawOdds").innerHTML,
+    away: document.getElementById("awayOdds").innerHTML
+};
+
+let americanCookie = document.getElementById("cookie-status").innerHTML; //cookie status
+
+$('#odds-switch').on('change', function (e) {
+
+    // IF AMERICAN COOKIE IS SET TO TRUE, THEN CONVERT FROM DECIMAL TO AMERICAN ODDS
+    if (americanCookie === "T") {
+
+        let americanOdds = {
+
+            home: (odds.home - 1) * 100,
+            draw: (odds.draw - 1) * 100,
+            away: (odds.away - 1) * 100,
+
+        };
+
+       $("#tableHomeTD").innerHTML = americanOdds.home;
+       $("#tableDrawTD").innerHTML = americanOdds.draw;
+       $("#tableAwayTD").innerHTML = americanOdds.away;
+
+        americanCookie.innerHTML = 'F'; // TODO COOKIE TO BE CHANGED TO FALSE FOR NEXT ITERATION
+    }
+
+    // IF AMERICAN COOKIE IS SET TO FALSE, THEN CONVERT FROM AMERICAN TO DECIMAL ODDS
+    if (americanCookie === "F") {
+
+        let decimalOdds = {
+
+            home: (odds.home / 100) + 1,
+            draw: (odds.draw / 100) + 1,
+            away: (odds.away / 100) + 1,
+
+        };
+
+        $("#tableHomeTD").innerHTML = decimalOdds.home;
+        $("#tableDrawTD").innerHTML = decimalOdds.draw;
+        $("#tableAwayTD").innerHTML = decimalOdds.away;
+
+        americanCookie.innerHTML = 'T';
+    }
+
+});

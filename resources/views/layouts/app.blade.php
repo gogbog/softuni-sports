@@ -27,6 +27,7 @@
 </head>
 <body>
 
+
 {{--ILIIKA TUKA SLAGASH NAVBARA--}}
 <nav class="main-top-navbar">
 
@@ -173,6 +174,40 @@
     </footer>
 </main>
 
+<!-- Button trigger modal -->
+
+<button type="button"
+        class="btn btn-primary info-modal-trigger"
+        onclick="openModal()">
+    <i class="fas fa-info"></i>
+</button>
+
+<!-- Modal -->
+<div class="modal-cust @if(!empty($_COOKIE['info']) && $_COOKIE['info'] == 'false') destroyed @endif"
+     id="exampleModalCenter">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Log in to our Admin Panel</h5>
+                <button type="button" class="close" onclick="closeModal()">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Здравейте, ние сме Code Ravers.
+                <br><br>Това е нашия проект за Softuni Fest 2019.
+                <br>Ако искате да влезне в администрацията:
+                <br>
+                username : <strong>softuni@abv.bg</strong>
+                <br>
+                password : <strong>softuni</strong>
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-primary" href="{{ url('/admin') }}">Go to Admin Panel</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 

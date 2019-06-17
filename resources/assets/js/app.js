@@ -194,35 +194,35 @@ searchForm.addEventListener( "focusout", function () {
 
 //Converter
 let odds = {
-    home: document.getElementById("homeOdds").innerHTML,
-    draw: document.getElementById("drawOdds").innerHTML,
-    away: document.getElementById("awayOdds").innerHTML
+    home: $("#homeOdds"),
+    draw: $("#drawOdds"),
+    away: $("#awayOdds")
 };
 
-let americanCookie = document.getElementById("cookie-status").innerHTML; //cookie status
+let americanCookie = $("#cookie-status"); //cookie status
 
 $('#odds-switch').on('change', function (e) {
 
     // IF AMERICAN COOKIE IS SET TO TRUE, THEN CONVERT FROM DECIMAL TO AMERICAN ODDS
-    if (americanCookie === "T") {
+    if (americanCookie.html() === "T") {
 
         let americanOdds = {
 
-            home: (odds.home - 1) * 100,
-            draw: (odds.draw - 1) * 100,
-            away: (odds.away - 1) * 100,
+            home: (odds.home.html() - 1) * 100,
+            draw: (odds.draw.html() - 1) * 100,
+            away: (odds.away.html() - 1) * 100,
 
         };
 
-       $("#tableHomeTD").innerHTML = americanOdds.home;
-       $("#tableDrawTD").innerHTML = americanOdds.draw;
-       $("#tableAwayTD").innerHTML = americanOdds.away;
+       $("#tableHomeTD").html(americanOdds.home);
+       $("#tableDrawTD").html(americanOdds.draw);
+       $("#tableAwayTD").html(americanOdds.away);
 
-        americanCookie.innerHTML = 'F'; // TODO COOKIE TO BE CHANGED TO FALSE FOR NEXT ITERATION
+        americanCookie.html('F'); // TODO COOKIE TO BE CHANGED TO FALSE FOR NEXT ITERATION
     }
 
     // IF AMERICAN COOKIE IS SET TO FALSE, THEN CONVERT FROM AMERICAN TO DECIMAL ODDS
-    if (americanCookie === "F") {
+    if (americanCookie.html() === "F") {
 
         let decimalOdds = {
 
@@ -232,11 +232,42 @@ $('#odds-switch').on('change', function (e) {
 
         };
 
-        $("#tableHomeTD").innerHTML = decimalOdds.home;
-        $("#tableDrawTD").innerHTML = decimalOdds.draw;
-        $("#tableAwayTD").innerHTML = decimalOdds.away;
+        $("#tableHomeTD").html(decimalOdds.home);
+        $("#tableDrawTD").html(decimalOdds.draw);
+        $("#tableAwayTD").html(decimalOdds.away);
 
-        americanCookie.innerHTML = 'T';
+        americanCookie.html('T');
     }
 
 });
+
+
+let modal = document.querySelector('.modal-cust');
+
+window.onload = function () {
+    if (document.cookie.split(';').filter((item) => item.includes('info=true')).length) {
+        modal.classList.remove('destroyed');
+    } else {
+        modal.classList.add('destroyed');
+    }
+};
+
+window.closeModal = function () {
+    modal.classList.add('destroyed');
+    document.cookie = "info=false";
+};
+
+window.openModal = function () {
+    modal.classList.remove('destroyed');
+    document.cookie = "info=true";
+};
+
+function outsideClick(e) {
+    if (e.target === modal) {
+        modal.classList.add('destroyed');
+        document.cookie = "info=false";
+    }
+}
+
+window.addEventListener('click', outsideClick);
+

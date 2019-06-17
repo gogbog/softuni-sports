@@ -9,6 +9,16 @@
         Cookie::make('dark', true);
     }
 
+    $info = true;
+    if ( !empty($_COOKIE['info']) && $_COOKIE['info'] == 'true' ) {
+        $info = true;
+    } else if ( !empty($_COOKIE['info']) && $_COOKIE['info'] == 'false' ) {
+        $info = false;
+    } else if ( empty($_COOKIE['info']) ) {
+        $info = true;
+        Cookie::make('info', true);
+    }
+
 @endphp
 <!doctype html>
 <html lang="{{ app()->getLocale() }}" data-theme="{{ $isDarkTheme ? 'dark' : 'light' }}">
@@ -181,9 +191,8 @@
         onclick="openModal()">
     <i class="fas fa-info"></i>
 </button>
-
 <!-- Modal -->
-<div class="modal-cust @if(!empty($_COOKIE['info']) && $_COOKIE['info'] == 'false') destroyed @endif"
+<div class="modal-cust {{ $info ? '' : 'destroyed' }}"
      id="exampleModalCenter">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">

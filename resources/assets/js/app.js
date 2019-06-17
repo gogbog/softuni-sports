@@ -244,14 +244,6 @@ $('#odds-switch').on('change', function (e) {
 
 let modal = document.querySelector('.modal-cust');
 
-window.onload = function () {
-    if (document.cookie.split(';').filter((item) => item.includes('info=true')).length) {
-        modal.classList.remove('destroyed');
-    } else {
-        modal.classList.add('destroyed');
-    }
-};
-
 window.closeModal = function () {
     modal.classList.add('destroyed');
     document.cookie = "info=false";

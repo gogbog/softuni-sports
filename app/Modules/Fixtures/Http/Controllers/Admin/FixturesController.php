@@ -64,9 +64,9 @@ class FixturesController extends BaseAdministrationController
             $action = AdministrationField::edit(Administration::route('fixtures.edit', $fixture->id));
 
             if (empty($fixture->deleted_at)) {
-                $action .= AdministrationField::delete(Administration::route('fixtures.destroy', $fixture->id));
+//                $action .= AdministrationField::delete(Administration::route('fixtures.destroy', $fixture->id));
             } else {
-                $action .= AdministrationField::restore(Administration::route('fixtures.destroy', $fixture->id));
+//                $action .= AdministrationField::restore(Administration::route('fixtures.destroy', $fixture->id));
             }
 
             return $action;

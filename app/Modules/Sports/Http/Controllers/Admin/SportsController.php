@@ -44,9 +44,9 @@ class SportsController extends BaseAdministrationController
             $action = AdministrationField::edit(Administration::route('sports.edit', $sport->id));
             $action .= AdministrationField::media($sport, ['icon', 'stadium']);
             if (empty($sport->deleted_at)) {
-                $action .= AdministrationField::delete(Administration::route('sports.destroy', $sport->id));
+//                $action .= AdministrationField::delete(Administration::route('sports.destroy', $sport->id));
             } else {
-                $action .= AdministrationField::restore(Administration::route('sports.destroy', $sport->id));
+//                $action .= AdministrationField::restore(Administration::route('sports.destroy', $sport->id));
             }
 
             return $action;

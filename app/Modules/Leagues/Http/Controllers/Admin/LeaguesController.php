@@ -42,9 +42,9 @@ class LeaguesController extends BaseAdministrationController {
             $action = AdministrationField::edit(Administration::route('leagues.edit', $league->id));
 
             if (empty($league->deleted_at)) {
-                $action .= AdministrationField::delete(Administration::route('leagues.destroy', $league->id));
+//                $action .= AdministrationField::delete(Administration::route('leagues.destroy', $league->id));
             } else {
-                $action .= AdministrationField::restore(Administration::route('leagues.destroy', $league->id));
+//                $action .= AdministrationField::restore(Administration::route('leagues.destroy', $league->id));
             }
 
             return $action;

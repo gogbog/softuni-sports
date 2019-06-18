@@ -18,11 +18,9 @@ class Controller extends BaseController
     public function __construct() {
 
 
-        $sports = Cache::remember('sports_cache', 9000, function () {
-            return Sport::active()->with(['leagues' => function ($q) {
-                $q->withCount('fixtures');
-            }])->withCount(['leagues'])->get();
-        });
+        $sports =    Sport::with(['leagues' => function ($q) {
+            $q->withCount('fixtures');
+        }])->withCount(['leagues'])->get();
 
         View::share('sports_cache', $sports);
 
